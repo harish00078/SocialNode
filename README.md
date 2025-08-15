@@ -58,8 +58,8 @@ curl -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/
 ```
 <!-- 
 {
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ3YjI3NGVmZjA3ZDJjODAyNTE0NyIsImlhdCI6MTc1NTE1MTI1OSwiZXhwIjoxNzU1MTUyMTU5fQ.YNGzjK2KYSNVqRymaL5u4i-XiMyh0PEDSzITvi8XSaA",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ3YjI3NGVmZjA3ZDJjODAyNTE0NyIsImlhdCI6MTc1NTE1MTI1OSwiZXhwIjoxNzU1NzU2MDU5fQ.kQjbWDkLARCbrFbS7qeUSqLGOretCuTVBzlIc3U2Mjk",
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ3YjI3NGVmZjA3ZDJjODAyNTE0NyIsImlhdCI6MTc1NTI2NjE3OCwiZXhwIjoxNzU1MjY3MDc4fQ.vnYCE76fFJwE0ZEZUBd53PRfR0pWN_B2_eiwazq_1Zc",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OWQ3YjI3NGVmZjA3ZDJjODAyNTE0NyIsImlhdCI6MTc1NTI2NjE3OCwiZXhwIjoxNzU1ODcwOTc4fQ.LpdjtoUBON0ITIpFdzTlPSgprM5FeLDkoaVs6Az-ZYc",
     "user": {
         "id": "689d7b274eff07d2c8025147",
         "name": "Harish",
@@ -68,7 +68,7 @@ curl -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/
 }
  -->
 
-Use access token:
+Use access token:[Get-Request]
 ```bash
 TOKEN=<paste token here>
 curl -H "Authorization: Bearer $TOKEN" http://localhost:5000/api/posts
