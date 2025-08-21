@@ -4,10 +4,10 @@ const cloudinary = require('../config/cloudinary');
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  params: async () => ({
+  params: {
     folder: 'socialnode_uploads',
     resource_type: 'image'
-  }),
+  },
 });
 
 const upload = multer({
