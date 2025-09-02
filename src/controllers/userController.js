@@ -35,3 +35,21 @@ exports.updateProfile = async (req, res, next) => {
     res.json(user);
   } catch (e) { next(e); }
 };
+
+exports.searchUsers = async (req, res, next) => {
+  try {
+    const { q } = req.query;
+    if (!q || typeof q !== 'string') {
+      return res.status(400).json({ message: 'Search query is required' });
+    }
+    const users = await User.find({
+      $or: [
+        { name: { $regex: q, $options: 'i' } },
+        { email: { $regex: q, $options: 'i' } }
+      ]
+    }).select('name email avatar');
+    res.json(users);
+  } catch (e) {
+    next(e);
+  }
+};
