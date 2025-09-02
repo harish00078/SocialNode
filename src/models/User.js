@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true, select: false },
   bio: { type: String, trim: true },
   avatar: { type: String }, // Cloudinary URL
+  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Friendship' }]
 }, { timestamps: true });
 
 userSchema.pre('save', async function(next) {

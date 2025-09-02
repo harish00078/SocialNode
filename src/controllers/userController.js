@@ -2,7 +2,15 @@ const User = require('../models/User');
 
 exports.me = async (req, res, next) => {
   try {
-    const user = await User.findById(req.userId).select('-password');
+    const user = await User.findById(req.userId)
+      .select('-password')
+      .populate({
+        path: 'friends',
+        populate: {
+          path: 'to_user',
+          select: 'name email avatar'
+        }
+      });
     res.json(user);
   } catch (e) { next(e); }
 };
